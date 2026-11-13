@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tribe Gym 177 Malabe | Student Fitness Packages near SLIIT – Concept Demo</title>
+  <meta name="description" content="Tribe Gym – 177 Malabe. Just 500 m from SLIIT. Special student fitness packages, cardio, weights and friendly coaches. Open till 10:30 PM.">
+  <!-- Demo only: stops Google from listing this page. REMOVE when the real site goes live. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --char: #141414;
+      --char2: #1e1e1e;
+      --card: #232323;
+      --lime: #d7ff3d;
+      --lime-dark: #b6db1f;
+      --pink: #ff4fa3;
+      --text: #f3f3f0;
+      --muted: #a2a29a;
+      --edge: #333;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    @supports (overflow: clip) { html, body { overflow-x: clip; } }
+    body { font-family: 'Manrope', sans-serif; background: var(--char); color: var(--text); overflow-x: hidden; }
+    h1, h2, h3, h4, h5 { font-family: 'Unbounded', 'Arial Black', sans-serif; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: -.5px; }
+    section { padding: 96px 0; }
+    .muted { color: var(--muted); }
+    .lime { color: var(--lime) !important; }
+    .tape { display: inline-block; background: var(--lime); color: var(--char); font-weight: 800; font-size: .78rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 12px; transform: rotate(-2deg); }
+    .title { font-size: clamp(1.9rem, 4.6vw, 3.2rem); line-height: 1.05; }
+    @media (max-width: 575px) { .row.g-5 { --bs-gutter-x: 1.5rem; --gx: 1.5rem; margin-left: -.75rem; margin-right: -.75rem; } .row.g-5 > * { padding-left: .75rem; padding-right: .75rem; } }
+
+    .demo-line { background: var(--lime); color: var(--char); text-align: center; font-size: .8rem; padding: 6px; font-weight: 700; }
+
+    /* Nav */
+    .navbar { background: rgba(20,20,20,.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--edge); }
+    .brand { font-family: 'Unbounded'; font-weight: 900; font-size: 1.5rem; letter-spacing: 4px; color: #fff !important; text-decoration: none; line-height: 1; }
+    .brand small { display: block; font-family: 'Manrope'; font-size: .55rem; letter-spacing: 6px; color: var(--lime); font-weight: 800; margin-top: 2px; }
+    .navbar .nav-link { color: var(--muted) !important; font-weight: 700; font-size: .9rem; }
+    .navbar .nav-link:hover { color: #fff !important; }
+    .navbar-toggler { border-color: var(--edge); }
+    .navbar-toggler-icon { filter: invert(1); }
+
+    .btn-lime { background: var(--lime); color: var(--char); border: 0; border-radius: 14px; padding: 14px 26px; font-weight: 800; box-shadow: 4px 4px 0 #fff; transition: .15s; }
+    .btn-lime:hover { background: var(--lime); color: var(--char); transform: translate(-2px,-2px); box-shadow: 6px 6px 0 #fff; }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid #fff; border-radius: 14px; padding: 12px 24px; font-weight: 800; }
+    .btn-ghost:hover { background: #fff; color: var(--char); }
+
+    /* Hero */
+    .hero { position: relative; padding: 70px 0 90px; overflow: hidden; }
+    .hero h1 { font-size: clamp(2.8rem, 8vw, 6rem); line-height: .95; }
+    .hero h1 .stroke { color: transparent; -webkit-text-stroke: 2px var(--lime); }
+    .status { display: inline-flex; align-items: center; gap: 10px; background: var(--card); border: 1px solid var(--edge); border-radius: 40px; padding: 8px 16px; font-weight: 700; font-size: .9rem; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,.25); }
+    .dot.closed { background: #ef4444; box-shadow: 0 0 0 4px rgba(239,68,68,.25); }
+    .hero-card { position: relative; aspect-ratio: 4/5; border-radius: 28px; background: radial-gradient(ellipse at 30% 20%, rgba(215,255,61,.35), transparent 55%), radial-gradient(ellipse at 80% 90%, rgba(255,79,163,.3), transparent 55%), var(--char2); border: 2px solid var(--edge); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero-card .word { font-family: 'Unbounded'; font-weight: 900; font-size: clamp(3.5rem, 9vw, 6rem); color: rgba(255,255,255,.08); letter-spacing: 6px; }
+    .hero-card.has-img .word { display: none; }
+    .sticker { position: absolute; background: var(--lime); color: var(--char); font-weight: 800; border-radius: 50%; width: 130px; height: 130px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; line-height: 1.05; transform: rotate(-10deg); box-shadow: 4px 4px 0 #000; z-index: 2; }
+    .sticker b { font-family: 'Unbounded'; font-size: 1.9rem; }
+    .sticker small { font-size: .72rem; font-weight: 800; }
+    .sticker.s1 { left: -18px; top: 24px; }
+    .sticker.s2 { right: -10px; bottom: 30px; background: var(--pink); color: #fff; transform: rotate(8deg); width: 120px; height: 120px; }
+    .rating { display: inline-flex; gap: 8px; align-items: center; margin-top: 24px; font-weight: 700; }
+    .rating i { color: #facc15; }
+    @media (max-width: 575px) { .sticker { width: 104px; height: 104px; } .sticker b { font-size: 1.4rem; } .sticker.s1 { left: 6px; top: 10px; } .sticker.s2 { right: 6px; bottom: 10px; width: 100px; height: 100px; } }
+
+    /* Marquee */
+    .marquee { background: var(--lime); color: var(--char); overflow: hidden; white-space: nowrap; padding: 14px 0; font-family: 'Unbounded'; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; transform: rotate(-1.5deg); margin: 0 -20px; }
+    .marquee .track { display: inline-block; animation: mq 24s linear infinite; }
+    .marquee span { margin: 0 22px; }
+    @keyframes mq { to { transform: translateX(-50%); } }
+
+    /* Why */
+    .why { background: var(--card); border: 1px solid var(--edge); border-radius: 22px; padding: 26px; height: 100%; }
+    .why i { font-size: 1.8rem; color: var(--lime); }
+    .why h5 { margin: 14px 0 6px; font-size: 1rem; }
+    .why p { color: var(--muted); margin: 0; font-size: .92rem; }
+
+    /* Price builder */
+    .builder { background: var(--char2); border: 2px solid var(--edge); border-radius: 28px; padding: 38px; }
+    .switch { display: inline-flex; background: #000; border-radius: 40px; padding: 5px; }
+    .switch button { border: 0; background: transparent; color: var(--muted); font-weight: 800; padding: 10px 22px; border-radius: 40px; }
+    .switch button.on { background: var(--lime); color: var(--char); }
+    .builder label { font-size: .78rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: block; }
+    .dur { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .dur button { background: var(--card); border: 2px solid var(--edge); color: #fff; border-radius: 16px; padding: 14px 6px; font-weight: 800; }
+    .dur button small { display: block; color: var(--muted); font-weight: 600; font-size: .78rem; }
+    .dur button.on { border-color: var(--lime); background: rgba(215,255,61,.08); }
+    .squad { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .squad .avatars { display: flex; }
+    .squad .avatars span { width: 42px; height: 42px; border-radius: 50%; background: var(--lime); color: var(--char); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .78rem; border: 3px solid var(--char2); margin-left: -8px; }
+    .squad .avatars span:first-child { margin-left: 0; }
+    .squad .avatars span.f { background: var(--pink); color: #fff; }
+    .squad button.pm { width: 44px; height: 44px; border-radius: 50%; border: 2px solid #fff; background: transparent; color: #fff; font-size: 1.3rem; line-height: 1; }
+    .bill { background: var(--lime); color: var(--char); border-radius: 22px; padding: 26px; height: 100%; display: flex; flex-direction: column; }
+    .bill .big { font-family: 'Unbounded'; font-weight: 900; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1; }
+    .bill .line { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1.5px dashed rgba(20,20,20,.25); font-weight: 700; font-size: .92rem; }
+    .bill .save { background: var(--char); color: var(--lime); border-radius: 30px; padding: 5px 12px; font-weight: 800; font-size: .82rem; display: inline-block; }
+    .bill .btn-dark2 { background: var(--char); color: #fff; border: 0; border-radius: 14px; padding: 13px; font-weight: 800; margin-top: auto; }
+    .bill .btn-dark2:hover { background: #000; color: #fff; }
+    @media (max-width: 575px) { .builder { padding: 22px; } }
+
+    /* Gallery */
+    .gal { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .gal .ph { aspect-ratio: 1; border-radius: 20px; background: var(--card); border: 1px solid var(--edge); background-size: cover; background-position: center; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--muted); font-size: .85rem; }
+    .gal .ph:nth-child(odd) { transform: rotate(-1.5deg); } .gal .ph:nth-child(even) { transform: rotate(1.5deg); }
+    .gal .ph i { font-size: 1.8rem; color: var(--lime); }
+    .has-img > i, .has-img > small { display: none; }
+    @media (max-width: 767px) { .gal { grid-template-columns: 1fr 1fr; } }
+
+    /* Contact */
+    .contact { background: var(--char2); border-top: 1px solid var(--edge); }
+    .c-line { display: flex; gap: 14px; margin-bottom: 14px; }
+    .c-line i { color: var(--lime); font-size: 1.2rem; }
+    .c-line a { color: var(--text); text-decoration: none; }
+    .walk { background: var(--card); border: 1px solid var(--edge); border-radius: 22px; padding: 26px; display: flex; align-items: center; gap: 16px; }
+    .walk .path { flex: 1; height: 4px; background: repeating-linear-gradient(90deg, var(--lime) 0 10px, transparent 10px 18px); border-radius: 2px; }
+    .walk b { font-family: 'Unbounded'; font-size: .9rem; }
+    .map iframe { width: 100%; height: 100%; min-height: 320px; border: 1px solid var(--edge); border-radius: 22px; filter: grayscale(.4) invert(.92) hue-rotate(180deg); }
+
+    footer { border-top: 1px solid var(--edge); padding: 26px 0; color: var(--muted); font-size: .88rem; }
+
+    .wa { position: fixed; right: 18px; bottom: 18px; width: 58px; height: 58px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; z-index: 999; box-shadow: 0 6px 20px rgba(0,0,0,.5); }
+    .wa:hover { color: #fff; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: .7s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+    .gal .reveal.show:nth-child(odd) { transform: rotate(-1.5deg); }
+  </style>
+</head>
+<body>
+
+  <!-- DEMO NOTICE: remove after the owner approves -->
+  <div class="demo-line">Concept demo for Tribe Gym · prices and photos are samples</div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="brand" href="#home">TRIBE<small>FITNESS · 177 MALABE</small></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#why">Why Tribe</a></li>
+          <li class="nav-item"><a class="nav-link" href="#price">Prices</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Find us</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-lime btn-sm wa-link" href="#" target="_blank"><i class="bi bi-whatsapp me-1"></i> Join</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal">
+          <div class="status mb-4"><span class="dot" id="dot"></span><span id="statusText">Open now · closes 10:30 PM</span></div>
+          <h1>Join the<br><span class="stroke">Tribe.</span></h1>
+          <p class="lead muted my-4" style="max-width:480px">A friendly gym just 500 m from the SLIIT campus. Cardio, weights and coaches who actually care, with special packages for students.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#price" class="btn btn-lime">See student prices</a>
+            <a href="#contact" class="btn btn-ghost">Find the gym</a>
+          </div>
+          <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><span>4.2 on Google</span></div>
+        </div>
+        <div class="col-lg-6 reveal">
+          <div class="position-relative mx-auto" style="max-width:440px">
+            <div class="sticker s1"><b>500m</b><small>from SLIIT</small></div>
+            <div class="hero-card" data-img="hero.jpg"><span class="word">TRIBE</span></div>
+            <div class="sticker s2"><b>%</b><small>STUDENT<br>DEALS</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div style="overflow:hidden;padding:14px 0"><div class="marquee"><div class="track">
+    <span>Cardio</span><span>★</span><span>Weights</span><span>★</span><span>Student packages</span><span>★</span><span>Open till 10:30 PM</span><span>★</span><span>Bring your squad</span><span>★</span>
+    <span>Cardio</span><span>★</span><span>Weights</span><span>★</span><span>Student packages</span><span>★</span><span>Open till 10:30 PM</span><span>★</span><span>Bring your squad</span><span>★</span>
+  </div></div></div>
+
+  <!-- ===== WHY ===== -->
+  <section id="why">
+    <div class="container">
+      <div class="mb-5 reveal"><span class="tape">Why Tribe</span><h2 class="title mt-3">Made for <span class="lime">students</span><br>&amp; everyone else</h2></div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 reveal"><div class="why"><i class="bi bi-geo-alt"></i><h5>6 min from campus</h5><p>Just 500 m from SLIIT. Train between lectures or after class.</p></div></div>
+        <div class="col-md-6 col-lg-3 reveal"><div class="why"><i class="bi bi-moon-stars"></i><h5>Open late</h5><p>Open until 10:30 PM, so even late study days have time to train.</p></div></div>
+        <div class="col-md-6 col-lg-3 reveal"><div class="why"><i class="bi bi-bicycle"></i><h5>Cardio &amp; weights</h5><p>Spin bikes, treadmills, cable machines and free weights.</p></div></div>
+        <div class="col-md-6 col-lg-3 reveal"><div class="why"><i class="bi bi-emoji-smile"></i><h5>Friendly staff</h5><p>A welcoming place for beginners and regulars alike.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICE + SQUAD BUILDER ===== -->
+  <section id="price" class="pt-0">
+    <div class="container">
+      <div class="mb-5 reveal"><span class="tape">Prices</span><h2 class="title mt-3">Bring your squad,<br><span class="lime">pay less</span></h2><p class="muted">Sample prices. Tribe Gym's real rates go here.</p></div>
+      <div class="builder reveal">
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <label>I am a</label>
+            <div class="switch mb-4" id="who"><button class="on" data-v="student">Student</button><button data-v="regular">Regular member</button></div>
+            <label>Plan</label>
+            <div class="dur mb-4" id="dur">
+              <button data-m="1">1 Month<small id="d1"></small></button>
+              <button class="on" data-m="3">3 Months<small id="d3"></small></button>
+              <button data-m="6">6 Months<small id="d6"></small></button>
+            </div>
+            <label>Squad size (you + friends)</label>
+            <div class="squad">
+              <button class="pm" type="button" onclick="squad(-1)">−</button>
+              <div class="avatars" id="avatars"></div>
+              <button class="pm" type="button" onclick="squad(1)">+</button>
+              <span class="muted small" id="squadTip"></span>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="bill">
+              <small style="font-weight:800;letter-spacing:1px">EACH PERSON PAYS</small>
+              <div class="big" id="each">Rs. 0</div>
+              <div class="mb-3 mt-2"><span class="save" id="saveTag">No squad discount</span></div>
+              <div class="line"><span>Plan</span><span id="bPlan"></span></div>
+              <div class="line"><span>People</span><span id="bPeople"></span></div>
+              <div class="line mb-3"><span>Squad total</span><span id="bTotal"></span></div>
+              <a id="joinBtn" href="#" target="_blank" class="btn btn-dark2 w-100"><i class="bi bi-whatsapp me-2"></i>Join on WhatsApp</a>
+              <small class="mt-2" style="font-weight:600;opacity:.75">Student ID needed for student prices.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery" class="pt-0">
+    <div class="container">
+      <div class="mb-5 reveal"><span class="tape">Inside</span><h2 class="title mt-3">The <span class="lime">Tribe</span> floor</h2></div>
+      <div class="gal reveal">
+        <div class="ph" data-img="g1.jpg"><i class="bi bi-bicycle"></i><small class="mt-2">Cardio zone</small></div>
+        <div class="ph" data-img="g2.jpg"><i class="bi bi-lightning-charge"></i><small class="mt-2">Weights</small></div>
+        <div class="ph" data-img="g3.jpg"><i class="bi bi-image"></i><small class="mt-2">The Tribe wall</small></div>
+        <div class="ph" data-img="g4.jpg"><i class="bi bi-people"></i><small class="mt-2">Members</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5 reveal">
+          <span class="tape">Find us</span>
+          <h2 class="title mt-3 mb-4">177, <span class="lime">Malabe</span></h2>
+          <div class="walk mb-4"><b>SLIIT</b><span class="path"></span><i class="bi bi-person-walking lime" style="font-size:1.4rem"></i><span class="path"></span><b class="lime">TRIBE</b></div>
+          <div class="c-line"><i class="bi bi-geo-alt-fill"></i><div>Tribe Gym, 177 Malabe<br><span class="muted small">(about 500 m from SLIIT)</span></div></div>
+          <div class="c-line"><i class="bi bi-clock-fill"></i><div>Open daily · closes 10:30 PM<br><span class="muted small">(opening time to be confirmed)</span></div></div>
+          <div class="c-line"><i class="bi bi-telephone-fill"></i><a href="#" class="tel-link">Call the gym</a></div>
+          <div class="c-line"><i class="bi bi-whatsapp"></i><a href="#" class="wa-link" target="_blank">Message on WhatsApp</a></div>
+        </div>
+        <div class="col-lg-7 map reveal"><iframe src="https://maps.google.com/maps?q=Tribe%20Gym%20177%20Malabe&z=15&output=embed" loading="lazy" title="Map to Tribe Gym"></iframe></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <span class="brand" style="font-size:1.1rem">TRIBE</span>
+      <span>&copy; <span id="yr"></span> Tribe Gym · 177 Malabe</span>
+      <span>Website by Lowamina Pigera</span>
+    </div>
+  </footer>
+
+  <a href="#" target="_blank" class="wa wa-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ===== SETTINGS =====
+    // Put the gym's WhatsApp number here (94 + number without the first 0), e.g. '94771234567'.
+    const WHATSAPP_NUMBER = '';
+    const OPEN_HOUR = 5, CLOSE_HOUR = 22.5;   // opening time is a guess (5:00 AM): confirm with the gym. Closes 10:30 PM (Google).
+
+    const wa = t => WHATSAPP_NUMBER ? `https://wa.me/${WHATSAPP_NUMBER}` + (t ? `?text=${encodeURIComponent(t)}` : '') : '#contact';
+    document.querySelectorAll('.wa-link').forEach(a => a.href = wa(''));
+    document.querySelectorAll('.tel-link').forEach(a => { if (WHATSAPP_NUMBER) { a.href = 'tel:+' + WHATSAPP_NUMBER; a.textContent = '+' + WHATSAPP_NUMBER; } });
+    const rs = n => 'Rs. ' + Math.round(n).toLocaleString('en-LK');
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // ---- Live open / closed badge (Sri Lanka time) ----
+    function status() {
+      const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Colombo' }));
+      const h = now.getHours() + now.getMinutes() / 60, open = h >= OPEN_HOUR && h < CLOSE_HOUR;
+      document.getElementById('dot').classList.toggle('closed', !open);
+      document.getElementById('statusText').textContent = open ? 'Open now · closes 10:30 PM' : 'Closed now · opens in the morning';
+    }
+    status(); setInterval(status, 60000);
+
+    // ---- Price + squad builder (SAMPLE prices) ----
+    const PRICES = { student: { 1: 3000, 3: 8000, 6: 15000 }, regular: { 1: 4000, 3: 11000, 6: 20000 } };
+    const SQUAD_OFF = n => n >= 4 ? 0.15 : n === 3 ? 0.10 : n === 2 ? 0.05 : 0;   // sample squad discount
+    let who = 'student', months = 3, people = 1;
+    document.querySelectorAll('#who button').forEach(b => b.addEventListener('click', () => {
+      document.querySelectorAll('#who button').forEach(x => x.classList.remove('on')); b.classList.add('on'); who = b.dataset.v; draw();
+    }));
+    document.querySelectorAll('#dur button').forEach(b => b.addEventListener('click', () => {
+      document.querySelectorAll('#dur button').forEach(x => x.classList.remove('on')); b.classList.add('on'); months = +b.dataset.m; draw();
+    }));
+    function squad(d) { people = Math.min(8, Math.max(1, people + d)); draw(); }
+    function draw() {
+      [1, 3, 6].forEach(m => document.getElementById('d' + m).textContent = rs(PRICES[who][m]));
+      const base = PRICES[who][months], off = SQUAD_OFF(people), each = base * (1 - off);
+      document.getElementById("avatars").innerHTML = Array.from({ length: people }, (_, i) => `<span class="${i ? "f" : ""}">${i ? "+" : "me"}</span>`).join("");
+      document.getElementById('squadTip').textContent = people === 1 ? 'Add a friend to save 5%' : people < 4 ? `Add ${4 - people} more for 15% off` : 'Max squad discount!';
+      document.getElementById('each').textContent = rs(each);
+      document.getElementById('saveTag').textContent = off ? `Squad saves ${off * 100}% each` : 'No squad discount';
+      const planName = `${who === 'student' ? 'Student' : 'Regular'} · ${months} month${months > 1 ? 's' : ''}`;
+      document.getElementById('bPlan').textContent = planName;
+      document.getElementById('bPeople').textContent = people;
+      document.getElementById('bTotal').textContent = rs(each * people);
+      document.getElementById('joinBtn').href = wa(`Hi Tribe Gym! I'd like to join.\nPlan: ${planName}\nSquad: ${people} ${people > 1 ? 'people' : 'person'}\nWebsite price: ${rs(each)} each${off ? ` (${off * 100}% squad discount)` : ''}`);
+    }
+    draw();
+
+    // Photo slots: put photos in the "img" folder (see img/PHOTOS.txt) and they appear
+    document.querySelectorAll('[data-img]').forEach(el => {
+      const src = 'img/' + el.dataset.img, test = new Image();
+      test.onload = () => { el.style.backgroundImage = `url("${src}")`; el.classList.add('has-img'); };
+      test.src = src;
+    });
+
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+    }), { threshold: .1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
